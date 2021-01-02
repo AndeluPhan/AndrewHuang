@@ -1,0 +1,114 @@
+$darksky: midnightblue;
+// For Dark Mode ONLY -----------------------------------------------------------------------------------
+/* Dark Mode toggler  -------------------------------------------------------------------------*/
+.fa-moon {
+  color: #f1c40f;
+}
+.fa-sun {
+  color: #ff8c00;
+}
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+
+  em {
+    margin-left: 10px;
+    font-size: 1rem;
+    color: white;
+    text-shadow: 1px 1px 10px#be00fe, 1px 1px 30px #ec8b9e;
+  }
+}
+#toggle-btn {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+.theme-switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+}
+
+.theme-switch input {
+  display: none;
+}
+
+.slider {
+  background-color: lightpink;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.4s;
+  padding: 5px;
+  // justify-content: space-between;
+}
+
+.slider:before {
+  background-color: #fff;
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: 0.4s;
+  width: 26px;
+}
+
+input:checked + .slider {
+  background-color: midnightblue;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+//Tool tip for theme changing.
+.themetip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+
+  .themetiptext {
+    visibility: hidden;
+    width: 145px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .themetiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+  }
+}
+.themetip:hover .themetiptext {
+  visibility: visible;
+  opacity: 1;
+}
+

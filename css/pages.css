@@ -1,0 +1,10 @@
+:root {
+    --Mode: lightpink;
+}
+[data-theme="night"] {
+    --Mode: midnightblue;
+}
+
+html, body{
+    background-color: var(--Mode);
+}
